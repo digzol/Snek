@@ -19,7 +19,7 @@ public class RopePhysics : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (segmentCount != _line.positionCount) { _line.positionCount = segmentCount; }
+        if (segmentCount != _line.positionCount) _line.positionCount = segmentCount;
 
         var t = transform;
         var rotation = t.rotation;

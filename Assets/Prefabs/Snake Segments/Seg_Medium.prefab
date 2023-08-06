@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.75, y: 0.75, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42545357158748556}
   m_RootOrder: 2
@@ -42,6 +43,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -110,12 +112,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42545357158748556}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &2144576869931382711
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,6 +129,7 @@ LineRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -217,16 +222,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 1
+  m_MaskInteraction: 0
   m_UseWorldSpace: 0
   m_Loop: 1
+  m_ApplyActiveColorSpace: 0
 --- !u!114 &2144576869931382710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,9 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcc3a62abefdff42a71b63346e7636a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segments: 16
-  XRadius: 0.75
-  YRadius: 0.75
+  segments: 16
+  xRadius: 0.75
+  yRadius: 0.75
 --- !u!1 &3116403117755307153
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +278,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42545357158748556}
   m_RootOrder: 1
@@ -284,6 +294,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -350,6 +361,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3605193844055898228}
   m_RootOrder: 1
@@ -381,6 +393,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 42545357158748556}
   - {fileID: 7791019139862809263}
@@ -399,8 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec5ce6d5fe88d74d8d987d38f53f212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedSegment: {fileID: 0}
-  Anchor: {x: 0, y: 1}
+  connectedSegment: {fileID: 0}
+  anchor: {x: 0, y: 1}
 --- !u!1 &4734198433284571711
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +441,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.75, y: 0.75, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42545357158748556}
   m_RootOrder: 3
@@ -443,6 +457,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -509,6 +524,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2144576869931382344}
   - {fileID: 4829646366533687234}
@@ -524,6 +540,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 42545357158748556}
     m_Modifications:
     - target: {fileID: 346682693954083757, guid: ac2e48276b18d9243901f8dc7d23bc5b,
@@ -787,6 +804,9 @@ PrefabInstance:
       value: Tentacle (right)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac2e48276b18d9243901f8dc7d23bc5b, type: 3}
 --- !u!4 &265693713693836409 stripped
 Transform:
@@ -799,6 +819,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 42545357158748556}
     m_Modifications:
     - target: {fileID: 346682693954083757, guid: ac2e48276b18d9243901f8dc7d23bc5b,
@@ -1237,6 +1258,9 @@ PrefabInstance:
       value: Tentacle (left)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac2e48276b18d9243901f8dc7d23bc5b, type: 3}
 --- !u!4 &5575756163896222727 stripped
 Transform:

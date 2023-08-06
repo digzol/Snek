@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakePartManager : PartManager
 {
     [Header("Snake Parts")]
     public GameObject oddSegmentPrefab;
+
     public GameObject evenSegmentPrefab;
     public int oddSegmentFrequency = 4;
     public int oddSegmentOffset = 2;
@@ -16,12 +16,12 @@ public class SnakePartManager : PartManager
         var tailJoint = Tail.GetComponent<SegmentJoint>();
         var isOddSegment = (parts.Count + oddSegmentOffset) % oddSegmentFrequency == 0;
         var newSegPrefab = isOddSegment ? evenSegmentPrefab : oddSegmentPrefab;
-        var prevJoint = tailJoint.ConnectedSegment;
+        var prevJoint = tailJoint.connectedSegment;
         var newSeg = Instantiate(newSegPrefab, prevJoint.position, Quaternion.identity, gameObject.transform);
         var newJoint = newSeg.transform.Find("Joint");
 
-        newSeg.GetComponent<SegmentJoint>().ConnectedSegment = prevJoint;
-        tailJoint.ConnectedSegment = newJoint;
+        newSeg.GetComponent<SegmentJoint>().connectedSegment = prevJoint;
+        tailJoint.connectedSegment = newJoint;
 
         StartCoroutine(nameof(AnimGrow), newSeg);
 

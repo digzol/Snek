@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -7,14 +6,14 @@ public class CameraFollow : MonoBehaviour
     public float minDistance;
     public float maxDistance;
     public float movementSpeed;
-
-    private Camera _mainCam;
     private Vector3 _anchorLastPos;
 
-    private Vector2 _velocity = Vector3.zero;
-    private Vector2 _snappedCameraPos = Vector2.zero;
+    private Camera _mainCam;
 
     private Vector3 _mouseLastPos;
+    private Vector2 _snappedCameraPos = Vector2.zero;
+
+    private Vector2 _velocity = Vector3.zero;
 
     private void Start()
     {
@@ -30,7 +29,7 @@ public class CameraFollow : MonoBehaviour
 
         var middlePos = (anchorPos + mousePos) / 2;
         var targetDir = Vector2.ClampMagnitude(middlePos - anchorPos, maxDistance);
-        var targetPos = (Vector3) targetDir + anchorPos;
+        var targetPos = (Vector3)targetDir + anchorPos;
 
         if (Vector2.Distance(anchorPos, mousePos) < minDistance)
         {
@@ -38,13 +37,11 @@ public class CameraFollow : MonoBehaviour
             {
                 //targetPos = cameraPos;
             }
-            else
-            {
-            }
+
             targetPos = (anchorPos + cameraPos) / 2 + anchor.rotation * new Vector3(2.0f, 0, 0);
             // TODO: offset pos only after ~5sec not moving
         }
-        
+
         //Debug.DrawLine(cameraPos, targetPos, Color.blue);
 
         var newPos = Vector2.SmoothDamp(cameraPos + anchorDeltaPos, targetPos, ref _velocity, movementSpeed);
@@ -84,7 +81,7 @@ public class CameraFollow : MonoBehaviour
         var mousePos = _mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         var dist = Vector2.ClampMagnitude(mousePos - anchorPos, maxDistance);
-        var targetPos = dist + (Vector2) anchorPos;
+        var targetPos = dist + (Vector2)anchorPos;
         var step = Vector2.Distance(cameraPos, targetPos) * movementSpeed * Time.smoothDeltaTime;
         var newPos = Vector2.MoveTowards(cameraPos, targetPos, step);
 

@@ -1,30 +1,34 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-public class SegmentJoint : MonoBehaviour {
-    public Transform ConnectedSegment;
-    public Vector2 Anchor = new Vector2(0, 0);
+public class SegmentJoint : MonoBehaviour
+{
+    public Transform connectedSegment;
+
+    public Vector2 anchor = new Vector2(0, 0);
 
     private Vector2 _baseAnchorSize;
 
-    public void Start() {
-        _baseAnchorSize = Anchor;
+    public void Start()
+    {
+        _baseAnchorSize = anchor;
     }
 
-    public void UpdateSegmentJointPos() {
-        if (ConnectedSegment == null) return;
+    public void UpdateSegmentJointPos()
+    {
+        if (connectedSegment == null) return;
 
-        Anchor = _baseAnchorSize * transform.localScale;
+        anchor = _baseAnchorSize * transform.localScale;
 
-        var targetDirection = ((Vector2) ConnectedSegment.position - (Vector2) transform.position);
+        var targetDirection = (Vector2)connectedSegment.position - (Vector2)transform.position;
 
         var angle = Vector3.Angle(transform.right, targetDirection) - 90;
 
         transform.Rotate(0, 0, angle * 0.9f);
 
-        var anchorPos = transform.position + transform.rotation * Anchor;
-        var translation = ((Vector2) ConnectedSegment.position - (Vector2) anchorPos);
+        var anchorPos = transform.position + transform.rotation * anchor;
+        var translation = (Vector2)connectedSegment.position - (Vector2)anchorPos;
 
-        transform.position += (Vector3) translation;
+        transform.position += (Vector3)translation;
     }
 }

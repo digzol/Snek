@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,8 +9,8 @@ public class DrawAnchorEditor : Editor
     {
         var t = (SegmentJoint)target;
 
-        var pos = t.transform.position + t.transform.rotation * t.Anchor;
-        var size = HandleUtility.GetHandleSize(t.Anchor) * 0.1f;
+        var pos = t.transform.position + t.transform.rotation * t.anchor;
+        var size = HandleUtility.GetHandleSize(t.anchor) * 0.1f;
         var snap = 0.1f;
         var dir = Vector3.forward;
 
@@ -24,12 +22,12 @@ public class DrawAnchorEditor : Editor
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObject(t, "Anchor position");
-            t.Anchor = Quaternion.Inverse(t.transform.rotation) * newTargetPos;
+            t.anchor = Quaternion.Inverse(t.transform.rotation) * newTargetPos;
         }
 
         Handles.color = new Color(0, 0, 0);
-        Handles.DrawSolidDisc(t.ConnectedSegment.position, Vector3.forward, size * 0.75f);
+        Handles.DrawSolidDisc(t.connectedSegment.position, Vector3.forward, size * 0.75f);
         Handles.color = new Color(0, 0.6f, 1);
-        Handles.DrawSolidDisc(t.ConnectedSegment.position, Vector3.forward, size * 0.6f);
+        Handles.DrawSolidDisc(t.connectedSegment.position, Vector3.forward, size * 0.6f);
     }
 }

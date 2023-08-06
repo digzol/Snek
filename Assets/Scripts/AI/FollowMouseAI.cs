@@ -3,10 +3,10 @@
 public class FollowMouseAI : MonoBehaviour
 {
     public float minDistanceSmoothing = 5.0f;
-    
+
     private Camera _mainCam;
-    private PartManager _partManager;
     private MovementAnimator _movementAnimator;
+    private PartManager _partManager;
 
     private void Start()
     {
@@ -22,13 +22,9 @@ public class FollowMouseAI : MonoBehaviour
         var dist = Vector2.Distance(mousePos, playerPos);
 
         if (dist < minDistanceSmoothing)
-        {
             //_movementAnimator.TargetPos = (mousePos + playerPos) / 2;
             _movementAnimator.TargetPos = mousePos;
-        }
         else
-        {
             _movementAnimator.TargetPos = mousePos;
-        }
     }
 }

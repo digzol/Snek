@@ -3,22 +3,37 @@ using UnityEngine;
 
 public class SnakeMovAnim : MovementAnimator
 {
-    [Range(0, 100)] public float movementSpeedMin = 20.0f;
-    [Range(0, 100)] public float movementSpeedMax = 40.0f;
-    [Range(0, 100)] public float movementSpeedUp = 20.0f;
-    [Range(0, 100)] public float movementSpeedDown = 20.0f;
+    [Range(0, 100)]
+    public float movementSpeedMin = 20.0f;
 
-    [Range(0, 100)] public float rotationSpeedMin = 2.0f;
-    [Range(0, 100)] public float rotationSpeedMax = 8.0f;
-    [Range(0, 100)] public float rotationSpeedUp = 1.0f;
-    [Range(0, 100)] public float rotationSpeedDown = 1.0f;
+    [Range(0, 100)]
+    public float movementSpeedMax = 40.0f;
 
-    private SnakePartManager _partManager;
+    [Range(0, 100)]
+    public float movementSpeedUp = 20.0f;
+
+    [Range(0, 100)]
+    public float movementSpeedDown = 20.0f;
+
+    [Range(0, 100)]
+    public float rotationSpeedMin = 2.0f;
+
+    [Range(0, 100)]
+    public float rotationSpeedMax = 8.0f;
+
+    [Range(0, 100)]
+    public float rotationSpeedUp = 1.0f;
+
+    [Range(0, 100)]
+    public float rotationSpeedDown = 1.0f;
+
     private Transform _headPart;
 
     private float _movementSpeed;
+
+    private SnakePartManager _partManager;
     private float _rotationSpeed;
-    
+
     private void Start()
     {
         _partManager = gameObject.GetComponent<SnakePartManager>();
@@ -46,13 +61,10 @@ public class SnakeMovAnim : MovementAnimator
 
         var headPos = _headPart.position;
         var up = _headPart.up;
-        var movDir = TargetPos - (Vector2) headPos;
-        
+        var movDir = TargetPos - (Vector2)headPos;
+
         // Help snake turn 180°
-        if (Math.Abs(Vector2.Angle(up, movDir) - 180) < 0.1)
-        {
-            up = Quaternion.Euler(0, 0, 1) * up;
-        }
+        if (Math.Abs(Vector2.Angle(up, movDir) - 180) < 0.1) up = Quaternion.Euler(0, 0, 1) * up;
 
         var targetPos = Vector3.Slerp(up, movDir, _rotationSpeed * Time.deltaTime);
         targetPos.z = headPos.z;
