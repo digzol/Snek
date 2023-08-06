@@ -6,3 +6,5 @@ The design was quickly influenced by 2006 Flash game "Flow" by Jenova Chen and N
 Since Unity's engine couldn't handle the snake's fluid movement, I challenged myself to animate all parts directly.
 
 There are currently no plans on finishing this prototype or turning it into a complete game, but future updates would include sandbox controls to customize the snake's appearance.
+
+Live demo can be found <a href="https://digzol.github.io/Snek/Build/">here</a>.
