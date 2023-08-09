@@ -363,8 +363,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 1843740050619174066, guid: 899fef2f9b11bcd4ab757db1f5d5369f,
     type: 3}
-  spawnRange: 50
-  spawnFrequency: 2
+  spawnFrequency: 0.5
+  maxEntities: 20
+  minOffscreenDistance: 0
+  maxOffscreenDistance: 40
 --- !u!4 &879153142
 Transform:
   m_ObjectHideFlags: 0
@@ -635,6 +637,11 @@ PrefabInstance:
       objectReference: {fileID: 529281584}
     - target: {fileID: 3150819011100938008, guid: f1332bbd1b0acb54c8c04df086bed31d,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150819011100938008, guid: f1332bbd1b0acb54c8c04df086bed31d,
+        type: 3}
       propertyPath: movementSpeedMax
       value: 40
       objectReference: {fileID: 0}
@@ -686,6 +693,11 @@ PrefabInstance:
       propertyPath: parts.Array.data[2]
       value: 
       objectReference: {fileID: 915099699}
+    - target: {fileID: 5523004456287279201, guid: f1332bbd1b0acb54c8c04df086bed31d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1185431611140441037, guid: f1332bbd1b0acb54c8c04df086bed31d, type: 3}
     - {fileID: 3150819011100938014, guid: f1332bbd1b0acb54c8c04df086bed31d, type: 3}
