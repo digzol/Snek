@@ -1,23 +1,17 @@
-﻿using UnityEngine;
-using UnityEngine.Serialization;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class FoodUnit : MonoBehaviour
 {
-    public float animOutSpeed = 5.0f;
-
-    private bool _isConsumed;
-
-    private void Update()
+    public void Consume()
     {
-        if (_isConsumed)
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, animOutSpeed * Time.deltaTime);
-
-        if (transform.localScale == Vector3.zero) Destroy(transform.parent.gameObject);
+        var anim = GetComponent<Animator>();
+        anim.SetTrigger("fadeout");
     }
 
-    public void ConsumeFood()
+    public void Destroy()
     {
-        if (_isConsumed) return;
-        _isConsumed = true;
+        Destroy(gameObject);
     }
 }

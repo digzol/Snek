@@ -16,6 +16,6 @@ public class EatFood : MonoBehaviour
         if (foodUnit == null) return;
 
         _partManager.Grow();
-        foodUnit.ConsumeFood();
+        foodUnit.Consume();
     }
 }

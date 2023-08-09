@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1843740050897360928}
   - component: {fileID: 8804185670207901308}
   - component: {fileID: 6080866391448571974}
+  - component: {fileID: 888820626276996232}
   m_Layer: 0
   m_Name: Food_Basic
   m_TagString: Untagged
@@ -230,7 +231,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f72b40175662d24ca1ac5cb82c24e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animOutSpeed: 5
+--- !u!95 &888820626276996232
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843740050897360958}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd1019495d9d3be40b854d0029a593cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4653897742501344028
 GameObject:
   m_ObjectHideFlags: 0
